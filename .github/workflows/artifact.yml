@@ -29,7 +29,9 @@ jobs:
         name: hello-artifact
     
     - name: Download text file
-      run: mv hello.txt ./artifacts/
+      run: |
+        mkdir -p ./artifacts/
+        mv hello.txt ./artifacts/
 
     - name: Display content of the text file
       run: cat ./artifacts/hello.txt
